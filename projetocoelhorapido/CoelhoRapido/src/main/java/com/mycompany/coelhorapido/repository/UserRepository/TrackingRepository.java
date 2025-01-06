@@ -14,7 +14,7 @@ public class TrackingRepository {
         String query = "SELECT userid, productName, price, driverid, pickupAddress, deliveryAddress, weight, notes, trackingCode FROM orders WHERE trackingCode = ?";
         ArrayList<String> orderDetails = new ArrayList<>();
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, trackingCode);
