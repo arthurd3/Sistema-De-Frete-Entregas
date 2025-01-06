@@ -47,7 +47,7 @@ public class ViewAllDeliveries extends javax.swing.JFrame {
                 "FROM orders o " +
                 "LEFT JOIN drivers d ON o.driverid = d.driver_id";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
 
