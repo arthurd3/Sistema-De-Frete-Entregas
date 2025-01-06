@@ -17,7 +17,7 @@ public class ViewOrdersRepository {
 
         String query = "SELECT * FROM orders WHERE userid = ?";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement pst = conn.prepareStatement(query)) {
 
             
