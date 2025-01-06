@@ -18,7 +18,7 @@ public class LoginController {
     
     public boolean authenticate(String username, String password) {
         // Estabelece uma conexão com o banco de dados
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "")) {
 
             // Cria o repositório de login usando a conexão
             LoginRepository loginRepo = new LoginRepository(conn);
@@ -47,7 +47,7 @@ public class LoginController {
         String userType = null;
         String query = "SELECT usertype FROM users WHERE name = ?";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "")) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
@@ -69,7 +69,7 @@ public class LoginController {
         String name = null;
         String query = "SELECT name FROM users WHERE name = ?";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "")) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
@@ -89,7 +89,7 @@ public class LoginController {
         int userId = 0;
         String query = "SELECT user_id FROM users WHERE name = ?";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "")) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
@@ -108,7 +108,7 @@ public class LoginController {
         int driverId = 0;
         String query = "SELECT driver_id FROM drivers WHERE name = ?";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "")) {
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
