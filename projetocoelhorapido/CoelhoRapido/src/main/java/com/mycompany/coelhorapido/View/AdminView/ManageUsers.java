@@ -89,7 +89,7 @@ public class ManageUsers extends javax.swing.JFrame {
 
         String query = "SELECT user_id, name, email, userType FROM users";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "0");
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
 
@@ -119,7 +119,7 @@ public class ManageUsers extends javax.swing.JFrame {
 
         String query = "SELECT driver_id, name, email FROM drivers";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "0");
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
 
@@ -166,7 +166,7 @@ public class ManageUsers extends javax.swing.JFrame {
 
         int confirm = JOptionPane.showConfirmDialog(this, "Tem certeza que deseja excluir o usuário de ID: " + userId + "?", "Confirmação", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
-            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+            try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "0");
                  PreparedStatement stmt = conn.prepareStatement("DELETE FROM users WHERE user_id = ?")) {
 
                 stmt.setInt(1, userId);
@@ -213,7 +213,7 @@ public class ManageUsers extends javax.swing.JFrame {
             
             Connection conn = null;
             try {
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "0");
                 PreparedStatement stmt = conn.prepareStatement("DELETE FROM drivers WHERE driver_id = ?");
                 stmt.setInt(1, driverId);
                 stmt.executeUpdate();
