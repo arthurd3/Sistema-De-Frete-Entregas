@@ -12,7 +12,7 @@ public class SelectDeliveryRepository {
 
         String query = "SELECT id, productName, price, trackingCode, status FROM orders WHERE status = 'pendente' "; 
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement pst = conn.prepareStatement(query);
              ResultSet rs = pst.executeQuery()) {
 
@@ -50,7 +50,7 @@ public class SelectDeliveryRepository {
         
         String query = "UPDATE orders SET status = 'Em_andamento', driverid = ? WHERE id = ?";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345"); 
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", ""); 
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setInt(1, driverId); 
