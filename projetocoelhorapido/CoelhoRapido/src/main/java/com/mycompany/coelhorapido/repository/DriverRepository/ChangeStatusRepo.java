@@ -16,7 +16,7 @@ public class ChangeStatusRepo {
         ArrayList<String> orders = new ArrayList<>();
         String query = "SELECT id, productName, price, trackingCode, status FROM orders WHERE status = 'Em_andamento' AND driverid = ?";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             
@@ -49,7 +49,7 @@ public class ChangeStatusRepo {
     public boolean updateOrderStatus(int orderId, String status) {
         String query = "UPDATE orders SET status = ? WHERE id = ?";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, status);
