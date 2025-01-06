@@ -31,7 +31,7 @@ public class RegisterRepository {
     
     public static void CreateUser(String nome, String email, String senhaStr) {
         String userType = "client";
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
             ) {
             if (conn != null) {
                 // Verifica se o nome já está em uso
@@ -66,7 +66,7 @@ public class RegisterRepository {
     
     public static void CreateDriver(String nome, String email, String senhaStr) {
         String userType = "driver";
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
             ) {
             if (conn != null) {
                 // Verifica se o nome já está em uso
