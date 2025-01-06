@@ -89,7 +89,7 @@ public class DriverEditor extends javax.swing.JFrame {
 
     
     private void loadUserData() {
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "")) {
             if (conn != null) {
                 String query = "SELECT name, email, password FROM drivers WHERE driver_id = ?";
                 try (PreparedStatement pst = conn.prepareStatement(query)) {
@@ -126,7 +126,7 @@ public class DriverEditor extends javax.swing.JFrame {
             return;
         }
 
-        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345")) {
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "0")) {
             if (conn != null) {
                 String query = "UPDATE drivers SET name = ?, email = ?, password = ? WHERE driver_id = ?";
                 try (PreparedStatement pst = conn.prepareStatement(query)) {
