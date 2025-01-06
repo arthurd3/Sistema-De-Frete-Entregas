@@ -13,7 +13,7 @@ public class RequestDeliveryRepository {
         String status = "Pendente";
         String query = "INSERT INTO orders (userid, productName, price, driverid, pickupAddress, deliveryAddress, weight, notes , trackingCode , status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ? , ?)";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "232345");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coelhorapido", "root", "");
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setInt(1, userId);
